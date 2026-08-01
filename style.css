@@ -1,0 +1,853 @@
+/*==================================================
+        PROJECT TINDURAM ❤️
+        STYLE.CSS - PART 1
+==================================================*/
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050816;
+    color:#ffffff;
+    overflow-x:hidden;
+    line-height:1.8;
+}
+
+/* BACKGROUND */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#1d2b64 0%,#050816 70%);
+
+    z-index:-3;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(255,90,150,.10);
+
+    filter:blur(180px);
+
+    left:-200px;
+    top:-150px;
+
+    animation:glowMove 18s ease-in-out infinite alternate;
+
+    z-index:-2;
+
+}
+
+@keyframes glowMove{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(250px,120px);
+}
+
+100%{
+transform:translate(420px,250px);
+}
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#050816;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff4d88;
+border-radius:20px;
+}
+
+/* HIDDEN */
+
+.hidden{
+display:none;
+}
+
+/* ======================================
+            LOADER
+======================================*/
+
+#loader{
+
+width:100%;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+}
+
+.terminal{
+
+width:750px;
+
+max-width:95%;
+
+padding:60px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.40),
+
+0 0 40px rgba(255,80,150,.18);
+
+text-align:center;
+
+}
+
+.terminal h1{
+
+font-size:65px;
+
+font-family:'Dancing Script',cursive;
+
+color:#ff6b9d;
+
+margin-bottom:25px;
+
+}
+
+#typingText{
+
+font-size:24px;
+
+color:#eeeeee;
+
+margin-bottom:35px;
+
+min-height:35px;
+
+}
+
+.progress{
+
+width:100%;
+
+height:14px;
+
+background:#1a2034;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin-bottom:45px;
+
+}
+
+.progressFill{
+
+width:0;
+
+height:100%;
+
+border-radius:50px;
+
+background:linear-gradient(
+90deg,
+#ff4d88,
+#ff92bc
+);
+
+animation:loadingBar 5s linear forwards;
+
+}
+
+@keyframes loadingBar{
+
+from{
+width:0%;
+}
+
+to{
+width:100%;
+}
+
+}
+
+/* BUTTON */
+
+button{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(
+135deg,
+#ff4d88,
+#ff83b3
+);
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 15px 35px rgba(255,80,150,.35);
+
+}
+
+/* ======================================
+              HERO
+======================================*/
+
+#hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+position:relative;
+
+padding:30px;
+
+}
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+}
+
+.heroContent{
+
+position:relative;
+
+z-index:10;
+
+max-width:900px;
+
+}
+
+.heroContent h3{
+
+font-size:22px;
+
+font-weight:300;
+
+letter-spacing:3px;
+
+margin-bottom:20px;
+
+color:#ffd0df;
+
+}
+
+.heroContent h1{
+
+font-size:82px;
+
+font-family:'Dancing Script',cursive;
+
+color:#ff6f9f;
+
+margin-bottom:20px;
+
+}
+
+.heroContent h2{
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+.heroContent p{
+
+font-size:22px;
+
+color:#dddddd;
+
+margin-bottom:45px;
+
+}
+
+/* MUSIC BUTTON */
+
+#musicButton{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:24px;
+
+z-index:9999;
+
+box-shadow:
+
+0 12px 35px rgba(255,80,150,.35);
+
+}
+
+/* HEART CONTAINER */
+
+#heartsContainer{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+/*==================================================
+        PROJECT TINDURAM ❤️
+        STYLE.CSS - PART 2
+==================================================*/
+
+/* ======================================
+                STORY
+======================================*/
+
+#story{
+    width:100%;
+    position:relative;
+    padding-bottom:120px;
+}
+
+/* Story Cards */
+
+.chapter{
+
+    max-width:950px;
+
+    margin:120px auto;
+
+    padding:70px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    transition:.45s ease;
+
+}
+
+.chapter:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 25px 70px rgba(255,80,150,.20);
+
+}
+
+.chapterNumber{
+
+    display:inline-block;
+
+    padding:10px 24px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    #ff4d88,
+    #ff85b5
+    );
+
+    letter-spacing:2px;
+
+    font-size:15px;
+
+    margin-bottom:30px;
+
+}
+
+.chapter h2{
+
+    font-size:50px;
+
+    color:#ff78ab;
+
+    margin-bottom:35px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+.chapter p{
+
+    font-size:22px;
+
+    color:#f0f0f0;
+
+    margin-bottom:18px;
+
+}
+
+/* Highlight */
+
+.highlight{
+
+    color:#ff8fb8;
+
+    font-size:28px !important;
+
+    font-weight:700;
+
+}
+
+/* ======================================
+            PHOTO SECTIONS
+======================================*/
+
+.photoSection{
+
+    text-align:center;
+
+    margin:120px auto;
+
+}
+
+.photoSection img{
+
+    width:430px;
+
+    max-width:90%;
+
+    border-radius:25px;
+
+    border:8px solid rgba(255,255,255,.10);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.40);
+
+    transition:.45s;
+
+}
+
+.photoSection img:hover{
+
+    transform:
+    scale(1.05)
+    rotate(-2deg);
+
+    box-shadow:
+    0 25px 70px rgba(255,80,150,.35);
+
+}
+
+.photoSection h3{
+
+    margin-top:30px;
+
+    font-size:34px;
+
+    color:#ff82af;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+/* ======================================
+            LOVE LETTER
+======================================*/
+
+#letterSection{
+
+    max-width:1000px;
+
+    margin:140px auto;
+
+    padding:30px;
+
+}
+
+#letterSection h2{
+
+    text-align:center;
+
+    font-size:56px;
+
+    margin-bottom:55px;
+
+    color:#ff78ab;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+.letter{
+
+    background:#fffdf8;
+
+    color:#333;
+
+    padding:70px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.40);
+
+}
+
+.letter p{
+
+    font-size:22px;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+.letter h3{
+
+    margin-top:50px;
+
+    text-align:right;
+
+    color:#ff4d88;
+
+    font-size:42px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+/* ======================================
+                ENDING
+======================================*/
+
+#ending,
+#finalMessage{
+
+    text-align:center;
+
+    padding:130px 8%;
+
+}
+
+#ending h1,
+#finalMessage h1{
+
+    font-size:85px;
+
+    color:#ff74a8;
+
+    margin-bottom:30px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+#ending h2,
+#finalMessage h2{
+
+    font-size:55px;
+
+    color:#ff9bc1;
+
+    margin-top:40px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+#ending p,
+#finalMessage p{
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+}
+
+/* ======================================
+        SCROLL REVEAL
+======================================*/
+
+.hidden-section{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
+
+.hidden-section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ======================================
+            HEARTS
+======================================*/
+
+.heart{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff6d9f;
+
+    animation:floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:
+
+translateY(0)
+
+scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-120vh)
+
+rotate(360deg)
+
+scale(1.3);
+
+opacity:0;
+
+}
+
+}
+
+/* ======================================
+        RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+.heroContent h1{
+
+font-size:54px;
+
+}
+
+.heroContent h2{
+
+font-size:28px;
+
+}
+
+.chapter{
+
+margin:60px 20px;
+
+padding:35px;
+
+}
+
+.chapter h2{
+
+font-size:36px;
+
+}
+
+.chapter p{
+
+font-size:18px;
+
+}
+
+.highlight{
+
+font-size:22px !important;
+
+}
+
+.letter{
+
+padding:35px;
+
+}
+
+.letter p{
+
+font-size:18px;
+
+}
+
+#ending h1,
+#finalMessage h1{
+
+font-size:58px;
+
+}
+
+#ending h2,
+#finalMessage h2{
+
+font-size:36px;
+
+}
+
+.photoSection img{
+
+width:90%;
+
+}
+
+}
+button{
+    position:relative;
+    overflow:hidden;
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.4);
+
+transform:scale(0);
+
+animation:ripple .7s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
